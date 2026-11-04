@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" id="htmlRoot">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>FEGY Logistics | شركة فيجى للملاحة والخدمات اللوجستية</title>
+<meta name="description" content="شركة فيجى للملاحة والخدمات اللوجستية - شحن وتفريغ، نقل بري، تخليص جمركي، معدات ثقيلة في الإسكندرية ومصر"/>
+<meta name="theme-color" content="#070d1a"/>
+<link rel="icon" type="image/png" href="assets/logo.png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+<style>
+:root{--bg:#070d1a;--bg2:#0c1526;--bg3:#111c31;--card:rgba(16,28,48,.72);--card-solid:#101c30;--border:rgba(245,158,11,.18);--orange:#f59e0b;--orange2:#e87722;--orange-glow:rgba(245,158,11,.35);--cyan:#22d3ee;--text:#e8eef8;--muted:#8b9cb3;--radius:18px;--shadow:0 25px 50px -12px rgba(0,0,0,.5)}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--text);line-height:1.75;overflow-x:hidden}a{text-decoration:none;color:inherit}img{max-width:100%;display:block}.container{max-width:1180px;margin:0 auto;padding:0 1.25rem}
+.bg-scene{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none}
+.bg-gradient{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 20% 10%,rgba(245,158,11,.09),transparent 50%),radial-gradient(ellipse 70% 50% at 85% 80%,rgba(34,211,238,.06),transparent 50%),linear-gradient(180deg,var(--bg) 0%,var(--bg2) 50%,var(--bg) 100%)}
+.orb{position:absolute;border-radius:50%;filter:blur(60px);opacity:.45;animation:floatOrb 18s ease-in-out infinite}
+.orb1{width:420px;height:420px;background:var(--orange);top:-120px;right:-80px}.orb2{width:320px;height:320px;background:var(--cyan);bottom:-80px;left:-60px;animation-delay:-6s;opacity:.25}.orb3{width:220px;height:220px;background:#6366f1;top:40%;left:50%;animation-delay:-12s;opacity:.2}
+@keyframes floatOrb{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(40px,-30px) scale(1.08)}}
+.grid-lines{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse at center,black 20%,transparent 75%)}
+.floating-shape{position:absolute;border:1px solid rgba(245,158,11,.15);border-radius:12px;animation:shapeFloat 20s linear infinite}
+.fs1{width:80px;height:80px;top:15%;left:10%;animation-duration:22s}.fs2{width:50px;height:50px;top:60%;right:12%;animation-duration:18s;animation-direction:reverse;border-color:rgba(34,211,238,.2)}.fs3{width:35px;height:35px;bottom:20%;left:25%;animation-duration:25s;border-radius:50%}
+@keyframes shapeFloat{0%{transform:translateY(0) rotate(0deg)}100%{transform:translateY(-100vh) rotate(360deg)}}
+.nav{position:fixed;top:0;right:0;left:0;z-index:1000;padding:1rem 0;transition:.4s}.nav.scrolled{background:rgba(7,13,26,.92);backdrop-filter:blur(20px);padding:.65rem 0;box-shadow:0 4px 30px rgba(0,0,0,.4)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem}.logo{display:flex;align-items:center;gap:12px;font-weight:800;font-size:1.2rem}
+.logo-img{width:46px;height:46px;object-fit:contain;border-radius:12px;background:#fff;padding:3px;box-shadow:0 4px 20px var(--orange-glow)}.logo span{display:block;font-size:.72rem;color:var(--orange);font-weight:600}
+.nav-links{display:flex;align-items:center;gap:1.4rem;list-style:none}.nav-links a{font-size:.9rem;font-weight:500;color:var(--muted);transition:.25s}.nav-links a:hover{color:var(--orange)}
+.lang-btn{background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.35);color:var(--orange);padding:.4rem 1rem;border-radius:50px;font-size:.8rem;font-weight:700;cursor:pointer;font-family:inherit;transition:.25s}.lang-btn:hover{background:var(--orange);color:#fff}
+.nav-cta{background:linear-gradient(135deg,var(--orange),var(--orange2));color:#fff!important;padding:.55rem 1.3rem;border-radius:50px;font-weight:700;box-shadow:0 6px 22px var(--orange-glow);transition:.3s}.nav-cta:hover{transform:translateY(-2px)}
+.menu-btn{display:none;background:0;border:0;color:#fff;font-size:1.4rem;cursor:pointer}
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;padding:130px 0 90px;z-index:1}
+.hero-content{display:grid;grid-template-columns:1.1fr .9fr;gap:3.5rem;align-items:center}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(245,158,11,.12);border:1px solid rgba(245,158,11,.35);padding:.4rem 1.1rem;border-radius:50px;font-size:.82rem;color:var(--orange);margin-bottom:1.4rem;font-weight:600;backdrop-filter:blur(8px)}
+.hero h1{font-size:clamp(2.4rem,5vw,3.6rem);font-weight:900;line-height:1.2;margin-bottom:1.2rem}.hero h1 em{font-style:normal;background:linear-gradient(135deg,var(--orange),#fbbf24);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-desc{font-size:1.08rem;color:var(--muted);margin-bottom:2.2rem;max-width:520px}
+.hero-btns{display:flex;flex-wrap:wrap;gap:1rem;margin-bottom:2.8rem}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:1rem 1.85rem;border-radius:50px;font-weight:700;font-size:.95rem;border:0;cursor:pointer;font-family:inherit;transition:.3s}
+.btn-primary{background:linear-gradient(135deg,var(--orange),var(--orange2));color:#fff;box-shadow:0 12px 32px var(--orange-glow)}.btn-primary:hover{transform:translateY(-3px);box-shadow:0 16px 40px var(--orange-glow)}
+.btn-ghost{background:rgba(255,255,255,.05);color:#fff;border:1.5px solid rgba(255,255,255,.15)}.btn-ghost:hover{border-color:var(--orange);color:var(--orange)}
+.stats{display:flex;gap:1.3rem;flex-wrap:wrap}.stat{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:1.15rem 1.5rem;min-width:120px;backdrop-filter:blur(16px);text-align:center;transition:.3s}.stat:hover{border-color:rgba(245,158,11,.4);transform:translateY(-4px)}
+.stat strong{display:block;font-size:1.75rem;font-weight:900;color:var(--orange);line-height:1.1}.stat span{font-size:.78rem;color:var(--muted)}
+.hero-visual{position:relative}.hero-card{border-radius:24px;overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow);position:relative;transition:.5s}.hero-card:hover{transform:rotateY(-3deg) scale(1.02)}
+.hero-card img{width:100%;height:340px;object-fit:cover}.hero-card-cap{position:absolute;bottom:0;right:0;left:0;padding:1.4rem;background:linear-gradient(to top,rgba(7,13,26,.95),transparent)}
+.hero-card-cap h3{font-size:1.1rem;margin-bottom:.3rem}.hero-card-cap p{font-size:.85rem;color:var(--muted)}
+.float-badge{position:absolute;top:20px;left:20px;background:rgba(7,13,26,.85);backdrop-filter:blur(12px);border:1px solid var(--border);border-radius:14px;padding:.7rem 1rem;display:flex;align-items:center;gap:10px;animation:pulseBadge 3s ease-in-out infinite}
+.float-badge i{color:var(--orange);font-size:1.2rem}.float-badge span{font-size:.8rem;font-weight:600}
+@keyframes pulseBadge{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+section{padding:100px 0;position:relative;z-index:1}.sec-head{text-align:center;margin-bottom:3.5rem}
+.sec-badge{display:inline-block;background:rgba(245,158,11,.1);color:var(--orange);padding:.35rem 1rem;border-radius:50px;font-size:.8rem;font-weight:700;margin-bottom:1rem}
+.sec-head h2{font-size:clamp(1.8rem,3.8vw,2.6rem);font-weight:800;margin-bottom:.7rem}.sec-head p{color:var(--muted);max-width:560px;margin:0 auto}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+.svc-card{background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:1.9rem;cursor:pointer;transition:.4s;position:relative;overflow:hidden;backdrop-filter:blur(12px)}
+.svc-card::before{content:'';position:absolute;top:0;right:0;width:100%;height:3px;background:linear-gradient(90deg,var(--orange),var(--cyan));transform:scaleX(0);transform-origin:right;transition:.4s}
+.svc-card:hover{transform:translateY(-8px);border-color:rgba(245,158,11,.35);box-shadow:0 20px 40px rgba(0,0,0,.35)}.svc-card:hover::before{transform:scaleX(1)}
+.svc-icon{width:58px;height:58px;background:linear-gradient(135deg,rgba(245,158,11,.15),rgba(245,158,11,.05));border-radius:16px;display:flex;align-items:center;justify-content:center;color:var(--orange);font-size:1.4rem;margin-bottom:1.2rem;transition:.35s}
+.svc-card:hover .svc-icon{background:linear-gradient(135deg,var(--orange),var(--orange2));color:#fff;box-shadow:0 10px 25px var(--orange-glow);transform:scale(1.08)}
+.svc-card h3{font-size:1.15rem;margin-bottom:.55rem}.svc-card p{font-size:.9rem;color:var(--muted);margin-bottom:1.1rem}
+.svc-more{font-size:.84rem;color:var(--orange);font-weight:600;display:inline-flex;align-items:center;gap:6px}.svc-more i{transition:.25s}.svc-card:hover .svc-more i{transform:translateX(-4px)}
+.gallery{background:var(--bg2)}.gal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem}
+.gal-item{position:relative;border-radius:18px;overflow:hidden;aspect-ratio:4/3;cursor:pointer;box-shadow:0 10px 30px rgba(0,0,0,.3)}
+.gal-item img{width:100%;height:100%;object-fit:cover;transition:.6s}.gal-item:hover img{transform:scale(1.1)}
+.gal-cap{position:absolute;inset:0;background:linear-gradient(to top,rgba(7,13,26,.92) 0%,rgba(7,13,26,.3) 50%,transparent 70%);display:flex;flex-direction:column;justify-content:flex-end;padding:1.2rem;opacity:0;transition:.35s}
+.gal-item:hover .gal-cap{opacity:1}.gal-cap h4{font-size:.98rem;margin-bottom:2px}.gal-cap span{font-size:.75rem;color:var(--orange);font-weight:600}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.why-card{background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:2.3rem 1.6rem;text-align:center;transition:.4s;backdrop-filter:blur(12px)}
+.why-card:hover{transform:translateY(-8px);border-color:var(--border);box-shadow:0 20px 40px rgba(0,0,0,.3)}
+.why-ico{width:70px;height:70px;margin:0 auto 1.4rem;background:linear-gradient(135deg,var(--orange),var(--orange2));border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.5rem;color:#fff;box-shadow:0 12px 30px var(--orange-glow)}
+.why-card h3{font-size:1.2rem;margin-bottom:.55rem}.why-card p{font-size:.92rem;color:var(--muted)}
+.request-sec{background:linear-gradient(180deg,var(--bg2),var(--bg))}
+.req-tabs{display:flex;flex-wrap:wrap;gap:.8rem;justify-content:center;margin-bottom:2.5rem}
+.req-tab{background:var(--card);border:1px solid rgba(255,255,255,.08);color:var(--muted);padding:.7rem 1.3rem;border-radius:50px;font-size:.88rem;font-weight:600;cursor:pointer;font-family:inherit;transition:.3s}
+.req-tab:hover,.req-tab.active{background:linear-gradient(135deg,var(--orange),var(--orange2));color:#fff;border-color:transparent;box-shadow:0 8px 22px var(--orange-glow)}
+.req-panel{display:none;animation:fadeUp .4s ease}.req-panel.active{display:block}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.req-form-box{background:var(--card);border:1px solid var(--border);border-radius:22px;padding:2.2rem;max-width:720px;margin:0 auto;backdrop-filter:blur(16px);box-shadow:var(--shadow)}
+.req-form-box h3{font-size:1.3rem;margin-bottom:.4rem;color:var(--orange)}.req-form-box .sub{color:var(--muted);font-size:.92rem;margin-bottom:1.6rem}
+.fg{margin-bottom:1.15rem}.fg label{display:block;font-size:.84rem;color:var(--muted);margin-bottom:.4rem;font-weight:500}
+.fg input,.fg select,.fg textarea{width:100%;background:rgba(7,13,26,.7);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:.85rem 1.1rem;color:#fff;font-family:inherit;font-size:.95rem;outline:0;transition:.25s}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--orange);box-shadow:0 0 0 3px rgba(245,158,11,.15)}.fg select option{background:var(--card-solid)}
+.fg-row{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem}.req-form-box .btn{width:100%;justify-content:center;margin-top:.5rem;padding:1.05rem}
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.3rem;margin-top:3rem}
+.contact-item{background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:1.4rem;display:flex;gap:1rem;align-items:flex-start;transition:.3s}.contact-item:hover{border-color:var(--border)}
+.contact-item i{width:42px;height:42px;background:rgba(245,158,11,.12);border-radius:12px;display:flex;align-items:center;justify-content:center;color:var(--orange);flex-shrink:0}
+.contact-item strong{display:block;font-size:.9rem;margin-bottom:.2rem}.contact-item a,.contact-item span{font-size:.88rem;color:var(--muted)}.contact-item a:hover{color:var(--orange)}
+footer{background:#050a14;border-top:1px solid rgba(255,255,255,.05);padding:55px 0 28px;position:relative;z-index:1}
+.ft-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:2rem;margin-bottom:2.2rem}.ft-brand p{color:var(--muted);font-size:.9rem;margin:1.1rem 0 1.3rem;max-width:270px}
+.ft-social{display:flex;gap:.7rem}.ft-social a{width:40px;height:40px;background:rgba(245,158,11,.1);border-radius:12px;display:flex;align-items:center;justify-content:center;color:var(--orange);transition:.25s}.ft-social a:hover{background:var(--orange);color:#fff;transform:translateY(-2px)}
+.ft-col h4{font-size:.95rem;margin-bottom:1.1rem}.ft-col ul{list-style:none}.ft-col li{margin-bottom:.5rem}.ft-col a{font-size:.88rem;color:var(--muted);transition:.25s}.ft-col a:hover{color:var(--orange)}
+.ft-bottom{border-top:1px solid rgba(255,255,255,.05);padding-top:1.3rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.8rem;font-size:.82rem;color:var(--muted)}
+.wa-float{position:fixed;bottom:26px;left:26px;z-index:999;width:60px;height:60px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.8rem;box-shadow:0 10px 30px rgba(37,211,102,.5);transition:.3s;animation:waPulse 2.5s infinite}.wa-float:hover{transform:scale(1.1)}
+@keyframes waPulse{0%,100%{box-shadow:0 10px 30px rgba(37,211,102,.5)}50%{box-shadow:0 10px 40px rgba(37,211,102,.75)}}
+.lb{display:none;position:fixed;inset:0;z-index:3000;background:rgba(0,0,0,.94);align-items:center;justify-content:center;padding:1.5rem}.lb.active{display:flex}
+.lb img{max-width:92vw;max-height:88vh;border-radius:14px}.lb-x{position:absolute;top:1.3rem;left:1.3rem;background:rgba(255,255,255,.12);border:0;color:#fff;width:44px;height:44px;border-radius:50%;font-size:1.2rem;cursor:pointer}.lb-x:hover{background:var(--orange)}
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:2000;align-items:center;justify-content:center;padding:1.5rem;backdrop-filter:blur(8px)}.modal-overlay.active{display:flex}
+.modal{background:var(--bg2);border:1px solid var(--border);border-radius:22px;max-width:520px;width:100%;padding:2.2rem;position:relative;animation:modalIn .35s ease;box-shadow:0 30px 60px rgba(0,0,0,.5)}
+@keyframes modalIn{from{opacity:0;transform:translateY(20px) scale(.97)}to{opacity:1;transform:none}}
+.modal-close{position:absolute;top:1.1rem;left:1.1rem;background:rgba(255,255,255,.08);border:0;color:#fff;width:38px;height:38px;border-radius:50%;cursor:pointer;font-size:1.1rem}.modal-close:hover{background:var(--orange)}
+.modal h3{font-size:1.3rem;margin-bottom:.8rem;color:var(--orange)}.modal p{color:var(--muted);font-size:.95rem;margin-bottom:1.2rem}
+.modal ul{list-style:none;margin-bottom:1.5rem}.modal ul li{padding:.4rem 0;display:flex;gap:10px;align-items:flex-start;font-size:.92rem}.modal ul li i{color:var(--orange);margin-top:4px}
+html[lang="en"]{direction:ltr}html[lang="en"] .modal-close,.lb-x{left:auto;right:1.1rem}html[lang="en"] .wa-float{left:auto;right:26px}html[lang="en"] .svc-card:hover .svc-more i{transform:translateX(4px)}
+@media(max-width:1024px){.hero-content{grid-template-columns:1fr;text-align:center}.hero-desc{margin:0 auto 2rem}.hero-btns,.stats{justify-content:center}.hero-visual{max-width:440px;margin:0 auto}.svc-grid,.why-grid,.gal-grid{grid-template-columns:1fr 1fr}.ft-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:768px){.nav-links{display:none;position:absolute;top:100%;right:0;left:0;background:rgba(7,13,26,.97);flex-direction:column;padding:1.3rem;gap:1rem;border-bottom:1px solid rgba(255,255,255,.08)}.nav-links.open{display:flex}.menu-btn{display:block}.svc-grid,.why-grid,.gal-grid,.fg-row,.ft-grid{grid-template-columns:1fr}.stats{justify-content:center}.hero{padding:110px 0 70px}.hero-card img{height:260px}.req-tabs{gap:.5rem}.req-tab{padding:.6rem 1rem;font-size:.82rem}}
+.reveal{opacity:0;transform:translateY(32px);transition:.8s cubic-bezier(.16,1,.3,1)}.reveal.on{opacity:1;transform:none}
+
+/* Premium extras */
+.preloader{position:fixed;inset:0;z-index:9999;background:var(--bg);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1.2rem;transition:opacity .7s,visibility .7s}
+.preloader.hide{opacity:0;visibility:hidden;pointer-events:none}
+.preloader-logo{width:72px;height:72px;border-radius:16px;background:#fff;padding:6px;box-shadow:0 0 40px var(--orange-glow);animation:logoPulse 1.4s ease-in-out infinite}
+@keyframes logoPulse{0%,100%{transform:scale(1);box-shadow:0 0 30px var(--orange-glow)}50%{transform:scale(1.08);box-shadow:0 0 50px var(--orange-glow)}}
+.preloader-bar{width:140px;height:3px;background:rgba(255,255,255,.1);border-radius:4px;overflow:hidden}
+.preloader-bar span{display:block;height:100%;width:40%;background:linear-gradient(90deg,var(--orange),var(--cyan));border-radius:4px;animation:loadBar 1.2s ease-in-out infinite}
+@keyframes loadBar{0%{transform:translateX(-100%)}100%{transform:translateX(350%)}}
+.page-enter{animation:pageIn 1s cubic-bezier(.16,1,.3,1) both}
+@keyframes pageIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+.svc-card,.why-card,.req-form-box,.stat,.contact-item{transform-style:preserve-3d;perspective:1000px}
+.svc-card:hover,.why-card:hover{transform:translateY(-10px) rotateX(2deg) scale(1.02)}
+.hero-card{transform-style:preserve-3d}
+.hero-card:hover{transform:rotateY(-6deg) rotateX(3deg) scale(1.03)}
+.floating-shape{opacity:.6}
+.fs4{width:60px;height:60px;top:30%;right:8%;animation-duration:28s;border-radius:50%;border-color:rgba(99,102,241,.25)}
+.fs5{width:40px;height:40px;bottom:35%;right:30%;animation-duration:16s;animation-direction:reverse;border-color:rgba(245,158,11,.2)}
+.req-tab{transition:all .35s cubic-bezier(.16,1,.3,1)}
+.req-panel{transition:opacity .4s}
+.gal-item{transition:transform .4s}
+.gal-item:hover{transform:translateY(-6px)}
+
+</style>
+</head>
+<body>
+
+<div class="preloader" id="preloader">
+  <img src="assets/logo.png" alt="FEGY" class="preloader-logo"/>
+  <div class="preloader-bar"><span></span></div>
+</div>
+
+<div class="bg-scene"><div class="bg-gradient"></div><div class="orb orb1"></div><div class="orb orb2"></div><div class="orb orb3"></div><div class="grid-lines"></div><div class="floating-shape fs1"></div><div class="floating-shape fs2"></div><div class="floating-shape fs3"></div><div class="floating-shape fs4"></div><div class="floating-shape fs5"></div></div>
+<nav class="nav" id="nav"><div class="container nav-inner">
+<a href="#home" class="logo"><img src="assets/logo.png" alt="FEGY" class="logo-img"/><div>FEGY <span data-ar="للملاحة واللوجستيات" data-en="Logistics & Marine">للملاحة واللوجستيات</span></div></a>
+<ul class="nav-links" id="navLinks">
+<li><a href="#home" data-ar="الرئيسية" data-en="Home">الرئيسية</a></li>
+<li><a href="#services" data-ar="خدماتنا" data-en="Services">خدماتنا</a></li>
+<li><a href="#gallery" data-ar="أعمالنا" data-en="Operations">أعمالنا</a></li>
+<li><a href="#request" data-ar="طلب خدمة" data-en="Request">طلب خدمة</a></li>
+<li><a href="#contact" data-ar="تواصل" data-en="Contact">تواصل</a></li>
+<li><button class="lang-btn" id="langBtn" type="button">EN</button></li>
+<li><a href="#request" class="nav-cta" data-ar="اطلب خدمة" data-en="Request Service">اطلب خدمة</a></li>
+</ul>
+<button class="menu-btn" id="menuBtn"><i class="fas fa-bars"></i></button>
+</div></nav>
+<section class="hero" id="home"><div class="container hero-content">
+<div>
+<div class="hero-badge"><i class="fas fa-circle" style="font-size:.45rem"></i> <span data-ar="حلول لوجستية متكاملة في مصر" data-en="Integrated Logistics Solutions in Egypt">حلول لوجستية متكاملة في مصر</span></div>
+<h1 data-ar="شركة <em>فيجى</em><br>للملاحة والخدمات اللوجستية" data-en="<em>FEGY</em> Logistics<br>& Marine Services">شركة <em>فيجى</em><br>للملاحة والخدمات اللوجستية</h1>
+<p class="hero-desc" data-ar="منظومة لوجستية متكاملة تجمع بين خدمات الموانئ والتخليص الجمركي والنقل البري وتأجير المعدات الثقيلة بأعلى كفاءة وأمان." data-en="An integrated logistics system combining port services, customs clearance, road transport, and heavy equipment rental with maximum efficiency and safety.">منظومة لوجستية متكاملة تجمع بين خدمات الموانئ والتخليص الجمركي والنقل البري وتأجير المعدات الثقيلة بأعلى كفاءة وأمان.</p>
+<div class="hero-btns">
+<a href="#request" class="btn btn-primary"><i class="fas fa-paper-plane"></i> <span data-ar="اطلب خدمة الآن" data-en="Request a Service">اطلب خدمة الآن</span></a>
+<a href="#gallery" class="btn btn-ghost"><i class="fas fa-images"></i> <span data-ar="شاهد أعمالنا" data-en="View Operations">شاهد أعمالنا</span></a>
+</div>
+<div class="stats">
+<div class="stat"><strong>10+</strong><span data-ar="سنوات خبرة" data-en="Years Experience">سنوات خبرة</span></div>
+<div class="stat"><strong>100%</strong><span data-ar="التزام بالمواعيد" data-en="On-Time">التزام بالمواعيد</span></div>
+<div class="stat"><strong>24/7</strong><span data-ar="دعم مباشر" data-en="Live Support">دعم مباشر</span></div>
+</div>
+</div>
+<div class="hero-visual">
+<div class="hero-card">
+<img src="assets/coils-port.jpg" alt="Port operations"/>
+<div class="float-badge"><i class="fas fa-ship"></i><span data-ar="عمليات الميناء" data-en="Port Ops">عمليات الميناء</span></div>
+<div class="hero-card-cap"><h3 data-ar="من الرصيف إلى المصنع" data-en="From Quay to Plant">من الرصيف إلى المصنع</h3><p data-ar="إدارة احترافية كاملة" data-en="Full professional handling">إدارة احترافية كاملة</p></div>
+</div>
+</div>
+</div></section>
+<section id="services"><div class="container">
+<div class="sec-head reveal"><div class="sec-badge" data-ar="خدماتنا" data-en="Our Services">خدماتنا</div>
+<h2 data-ar="حلول لوجستية من الميناء إلى المصنع" data-en="Logistics from Port to Plant">حلول لوجستية من الميناء إلى المصنع</h2>
+<p data-ar="اختر الخدمة واطلبها مباشرة بنموذج مخصص" data-en="Choose a service and request it with a dedicated form">اختر الخدمة واطلبها مباشرة بنموذج مخصص</p></div>
+<div class="svc-grid">
+<div class="svc-card reveal" data-modal="m1" data-tab="tab1"><div class="svc-icon"><i class="fas fa-ship"></i></div><h3 data-ar="الشحن والتفريغ البحري" data-en="Marine Stevedoring">الشحن والتفريغ البحري</h3><p data-ar="عمليات ميدانية لتفريغ وشحن السفن وإدارة الحاويات مباشرة من أرصفة الموانئ." data-en="Field operations for vessel loading/unloading and container handling from port quays.">عمليات ميدانية لتفريغ وشحن السفن وإدارة الحاويات مباشرة من أرصفة الموانئ.</p><div class="svc-more"><span data-ar="اطلب الخدمة" data-en="Request Service">اطلب الخدمة</span> <i class="fas fa-arrow-left"></i></div></div>
+<div class="svc-card reveal" data-modal="m2" data-tab="tab2"><div class="svc-icon"><i class="fas fa-truck"></i></div><h3 data-ar="النقل البري بالأسطول" data-en="Road Fleet Transport">النقل البري بالأسطول</h3><p data-ar="أسطول تريلات مجهز لنقل الحديد والحاويات بين جميع الموانئ والمحافظات." data-en="Equipped trailer fleet for steel and containers across ports and governorates.">أسطول تريلات مجهز لنقل الحديد والحاويات بين جميع الموانئ والمحافظات.</p><div class="svc-more"><span data-ar="اطلب الخدمة" data-en="Request Service">اطلب الخدمة</span> <i class="fas fa-arrow-left"></i></div></div>
+<div class="svc-card reveal" data-modal="m3" data-tab="tab3"><div class="svc-icon"><i class="fas fa-file-invoice"></i></div><h3 data-ar="التخليص الجمركي" data-en="Customs Clearance">التخليص الجمركي</h3><p data-ar="خبرة احترافية في إنهاء الإجراءات الجمركية لضمان سرعة الإفراج." data-en="Professional customs procedures for fast release and documentation.">خبرة احترافية في إنهاء الإجراءات الجمركية لضمان سرعة الإفراج.</p><div class="svc-more"><span data-ar="اطلب الخدمة" data-en="Request Service">اطلب الخدمة</span> <i class="fas fa-arrow-left"></i></div></div>
+<div class="svc-card reveal" data-modal="m4" data-tab="tab4"><div class="svc-icon"><i class="fas fa-crane"></i></div><h3 data-ar="تأجير المعدات الثقيلة" data-en="Heavy Equipment Rental">تأجير المعدات الثقيلة</h3><p data-ar="رافعات وونشات وكلاركات ثقيلة مع مشغلين محترفين للمشاريع الصناعية." data-en="Cranes, forklifts and heavy gear with professional operators.">رافعات وونشات وكلاركات ثقيلة مع مشغلين محترفين للمشاريع الصناعية.</p><div class="svc-more"><span data-ar="اطلب الخدمة" data-en="Request Service">اطلب الخدمة</span> <i class="fas fa-arrow-left"></i></div></div>
+<div class="svc-card reveal" data-modal="m5" data-tab="tab5"><div class="svc-icon"><i class="fas fa-boxes"></i></div><h3 data-ar="إدارة حاويات الميناء" data-en="Port Container Management">إدارة حاويات الميناء</h3><p data-ar="تنسيق كامل لحركة الحاويات من وإلى الموانئ مع ضمان السلامة والسرعة." data-en="End-to-end container movement with safety and speed tracking.">تنسيق كامل لحركة الحاويات من وإلى الموانئ مع ضمان السلامة والسرعة.</p><div class="svc-more"><span data-ar="اطلب الخدمة" data-en="Request Service">اطلب الخدمة</span> <i class="fas fa-arrow-left"></i></div></div>
+<div class="svc-card reveal" data-modal="m6" data-tab="tab6"><div class="svc-icon"><i class="fas fa-industry"></i></div><h3 data-ar="لوجستيات الصلب الصناعي" data-en="Industrial Steel Logistics">لوجستيات الصلب الصناعي</h3><p data-ar="تخصص في نقل وتوريد حديد التسليح واللفائف للمصانع والمشاريع الصناعية." data-en="Specialized rebar and coil supply to industrial plants and projects.">تخصص في نقل وتوريد حديد التسليح واللفائف للمصانع والمشاريع الصناعية.</p><div class="svc-more"><span data-ar="اطلب الخدمة" data-en="Request Service">اطلب الخدمة</span> <i class="fas fa-arrow-left"></i></div></div>
+</div></div></section>
+<section class="gallery" id="gallery"><div class="container">
+<div class="sec-head reveal"><div class="sec-badge" data-ar="أعمالنا الميدانية" data-en="Field Operations">أعمالنا الميدانية</div>
+<h2 data-ar="من واقع عملياتنا على الأرض" data-en="Real Operations on the Ground">من واقع عملياتنا على الأرض</h2>
+<p data-ar="صور حقيقية من الموانئ والمصانع والأسطول" data-en="Real photos from ports, plants and our fleet">صور حقيقية من الموانئ والمصانع والأسطول</p></div>
+<div class="gal-grid">
+<div class="gal-item reveal" onclick="openLb('assets/coils-port.jpg')"><img src="assets/coils-port.jpg" alt="" loading="lazy"/><div class="gal-cap"><h4 data-ar="لفائف الصلب وحاويات الميناء" data-en="Steel Coils & Port Containers">لفائف الصلب وحاويات الميناء</h4><span>Port Handling</span></div></div>
+<div class="gal-item reveal" onclick="openLb('assets/man-truck.jpg')"><img src="assets/man-truck.jpg" alt="" loading="lazy"/><div class="gal-cap"><h4 data-ar="أسطول النقل الحديث" data-en="Modern Transport Fleet">أسطول النقل الحديث</h4><span>Fleet</span></div></div>
+<div class="gal-item reveal" onclick="openLb('assets/rebar-workers.jpg')"><img src="assets/rebar-workers.jpg" alt="" loading="lazy"/><div class="gal-cap"><h4 data-ar="سلامة ترييب حديد التسليح" data-en="Rebar Rigging Safety">سلامة ترييب حديد التسليح</h4><span>Safety</span></div></div>
+<div class="gal-item reveal" onclick="openLb('assets/rebar-lift.jpg')"><img src="assets/rebar-lift.jpg" alt="" loading="lazy"/><div class="gal-cap"><h4 data-ar="إشراف ميداني" data-en="Field Supervision">إشراف ميداني</h4><span>Supervision</span></div></div>
+<div class="gal-item reveal" onclick="openLb('assets/night-loading.jpg')"><img src="assets/night-loading.jpg" alt="" loading="lazy"/><div class="gal-cap"><h4 data-ar="عمليات النقل الليلي" data-en="Night-Shift Operations">عمليات النقل الليلي</h4><span>24/7</span></div></div>
+<div class="gal-item reveal" onclick="openLb('assets/egypt-steel.jpg')"><img src="assets/egypt-steel.jpg" alt="" loading="lazy"/><div class="gal-cap"><h4 data-ar="توريد مباشر للمصانع" data-en="Direct Plant Supply">توريد مباشر للمصانع</h4><span>Plant Supply</span></div></div>
+<div class="gal-item reveal" onclick="openLb('assets/mobile-crane.jpg')"><img src="assets/mobile-crane.jpg" alt="" loading="lazy"/><div class="gal-cap"><h4 data-ar="تحميل بالونش الثقيل" data-en="Heavy Crane Loading">تحميل بالونش الثقيل</h4><span>Heavy Lifting</span></div></div>
+<div class="gal-item reveal" onclick="openLb('assets/lima-crane.jpg')"><img src="assets/lima-crane.jpg" alt="" loading="lazy"/><div class="gal-cap"><h4 data-ar="ونش ملاحي على الرصيف" data-en="Port Lattice Crane">ونش ملاحي على الرصيف</h4><span>Port Crane</span></div></div>
+<div class="gal-item reveal" onclick="openLb('assets/forklift-28t.jpg')"><img src="assets/forklift-28t.jpg" alt="" loading="lazy"/><div class="gal-cap"><h4 data-ar="معدات رفع ثقيلة" data-en="Heavy Forklift">معدات رفع ثقيلة</h4><span>Material Handling</span></div></div>
+</div></div></section>
+<section id="why"><div class="container">
+<div class="sec-head reveal"><div class="sec-badge" data-ar="لماذا فيجى" data-en="Why FEGY">لماذا فيجى</div><h2 data-ar="ما يميزنا عن غيرنا" data-en="What Sets Us Apart">ما يميزنا عن غيرنا</h2></div>
+<div class="why-grid">
+<div class="why-card reveal"><div class="why-ico"><i class="fas fa-bolt"></i></div><h3 data-ar="سرعة وأمان" data-en="Speed & Safety">سرعة وأمان</h3><p data-ar="أسطول حديث ومعايير سلامة صارمة في كل عملية." data-en="Modern fleet and strict safety standards on every job.">أسطول حديث ومعايير سلامة صارمة في كل عملية.</p></div>
+<div class="why-card reveal"><div class="why-ico"><i class="fas fa-layer-group"></i></div><h3 data-ar="خدمات شاملة" data-en="Full-Stack Services">خدمات شاملة</h3><p data-ar="من الرصيف حتى باب المصنع: شحن، تخليص، نقل، معدات." data-en="From quay to plant gate: stevedoring, clearance, haulage, gear.">من الرصيف حتى باب المصنع: شحن، تخليص، نقل، معدات.</p></div>
+<div class="why-card reveal"><div class="why-ico"><i class="fas fa-handshake"></i></div><h3 data-ar="التزام وشفافية" data-en="Commitment & Transparency">التزام وشفافية</h3><p data-ar="إدارة حازمة تضمن المواعيد والوضوح في كل مرحلة." data-en="Disciplined management that honors deadlines and clarity.">إدارة حازمة تضمن المواعيد والوضوح في كل مرحلة.</p></div>
+</div></div></section>
+<section class="request-sec" id="request"><div class="container">
+<div class="sec-head reveal"><div class="sec-badge" data-ar="طلب خدمة" data-en="Service Request">طلب خدمة</div>
+<h2 data-ar="اختر الخدمة واملأ النموذج المخصص" data-en="Choose a service and fill its dedicated form">اختر الخدمة واملأ النموذج المخصص</h2>
+</div>
+<div class="req-tabs reveal" id="reqTabs">
+<button class="req-tab active" data-tab="tab1" data-ar="شحن وتفريغ بحري" data-en="Marine Stevedoring">شحن وتفريغ بحري</button>
+<button class="req-tab" data-tab="tab2" data-ar="نقل بري" data-en="Road Transport">نقل بري</button>
+<button class="req-tab" data-tab="tab3" data-ar="تخليص جمركي" data-en="Customs">تخليص جمركي</button>
+<button class="req-tab" data-tab="tab4" data-ar="معدات ثقيلة" data-en="Heavy Equipment">معدات ثقيلة</button>
+<button class="req-tab" data-tab="tab5" data-ar="حاويات الميناء" data-en="Containers">حاويات الميناء</button>
+<button class="req-tab" data-tab="tab6" data-ar="لوجستيات صلب" data-en="Steel Logistics">لوجستيات صلب</button>
+</div>
+<div class="req-panel active" id="tab1"><div class="req-form-box">
+<h3 data-ar="طلب خدمة الشحن والتفريغ البحري" data-en="Marine Stevedoring Request">طلب خدمة الشحن والتفريغ البحري</h3>
+<p class="sub" data-ar="املأ بيانات السفينة والحمولة وسنتواصل معك فورًا" data-en="Fill vessel and cargo details and we will contact you shortly">املأ بيانات السفينة والحمولة وسنتواصل معك فورًا</p>
+<form onsubmit="return sendForm(event,'Marine Stevedoring / شحن وتفريغ بحري')">
+<div class="fg-row"><div class="fg"><label data-ar="اسم الشركة / العميل" data-en="Company / Client">اسم الشركة / العميل</label><input type="text" name="company" required placeholder="اسم الشركة"></div>
+<div class="fg"><label data-ar="رقم الهاتف" data-en="Phone">رقم الهاتف</label><input type="tel" name="phone" required placeholder="01xxxxxxxxx"></div></div>
+<div class="fg-row"><div class="fg"><label data-ar="اسم السفينة (إن وُجد)" data-en="Vessel Name (if any)">اسم السفينة (إن وُجد)</label><input type="text" name="vessel" placeholder="اسم السفينة"></div>
+<div class="fg"><label data-ar="حمولة السفينة التقريبية (طن)" data-en="Approx. Vessel Tonnage">حمولة السفينة التقريبية (طن)</label><input type="text" name="tonnage" placeholder="مثال: 15000 طن"></div></div>
+<div class="fg"><label data-ar="نوع الحمولة" data-en="Cargo Type">نوع الحمولة</label><input type="text" name="cargo" required placeholder="حاويات / لفائف صلب / حديد / بضائع عامة..."></div>
+<div class="fg-row"><div class="fg"><label data-ar="الميناء" data-en="Port">الميناء</label><input type="text" name="port" required placeholder="اسم الميناء"></div>
+<div class="fg"><label data-ar="تاريخ العملية المتوقع" data-en="Expected Operation Date">تاريخ العملية المتوقع</label><input type="text" name="date" placeholder="يوم / شهر / سنة"></div></div>
+<div class="fg"><label data-ar="ملاحظات إضافية" data-en="Additional Notes">ملاحظات إضافية</label><textarea name="notes" rows="3" placeholder="أي تفاصيل أخرى مهمة..."></textarea></div>
+<button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> <span data-ar="إرسال الطلب" data-en="Send Request">إرسال الطلب</span></button>
+</form></div></div>
+<div class="req-panel" id="tab2"><div class="req-form-box">
+<h3 data-ar="طلب خدمة النقل البري" data-en="Road Transport Request">طلب خدمة النقل البري</h3>
+<p class="sub" data-ar="حدد نوع الشحنة ومسار النقل" data-en="Specify cargo type and transport route">حدد نوع الشحنة ومسار النقل</p>
+<form onsubmit="return sendForm(event,'Road Transport / نقل بري')">
+<div class="fg-row"><div class="fg"><label data-ar="اسم الشركة / العميل" data-en="Company / Client">اسم الشركة / العميل</label><input type="text" name="company" required placeholder="اسم الشركة"></div>
+<div class="fg"><label data-ar="رقم الهاتف" data-en="Phone">رقم الهاتف</label><input type="tel" name="phone" required placeholder="01xxxxxxxxx"></div></div>
+<div class="fg"><label data-ar="نوع الشحنة" data-en="Cargo Type">نوع الشحنة</label><input type="text" name="cargo" required placeholder="حاويات / لفائف / حديد تسليح / معدات..."></div>
+<div class="fg-row"><div class="fg"><label data-ar="مكان الاستلام" data-en="Pickup Location">مكان الاستلام</label><input type="text" name="pickup" required placeholder="الميناء أو الموقع"></div>
+<div class="fg"><label data-ar="مكان التسليم" data-en="Delivery Location">مكان التسليم</label><input type="text" name="dest" required placeholder="المصنع أو الوجهة"></div></div>
+<div class="fg-row"><div class="fg"><label data-ar="الوزن التقريبي" data-en="Approx. Weight">الوزن التقريبي</label><input type="text" name="weight" placeholder="بالطن"></div>
+<div class="fg"><label data-ar="عدد الشاحنات المطلوبة" data-en="Number of Trucks">عدد الشاحنات المطلوبة</label><input type="text" name="trucks" placeholder="اختياري"></div></div>
+<div class="fg"><label data-ar="ملاحظات إضافية" data-en="Additional Notes">ملاحظات إضافية</label><textarea name="notes" rows="3" placeholder="مواعيد أو اشتراطات خاصة..."></textarea></div>
+<button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> <span data-ar="إرسال الطلب" data-en="Send Request">إرسال الطلب</span></button>
+</form></div></div>
+<div class="req-panel" id="tab3"><div class="req-form-box">
+<h3 data-ar="طلب خدمة التخليص الجمركي" data-en="Customs Clearance Request">طلب خدمة التخليص الجمركي</h3>
+<p class="sub" data-ar="بيانات الشحنة والإجراءات المطلوبة" data-en="Shipment details and required procedures">بيانات الشحنة والإجراءات المطلوبة</p>
+<form onsubmit="return sendForm(event,'Customs Clearance / تخليص جمركي')">
+<div class="fg-row"><div class="fg"><label data-ar="اسم الشركة / العميل" data-en="Company / Client">اسم الشركة / العميل</label><input type="text" name="company" required placeholder="اسم الشركة"></div>
+<div class="fg"><label data-ar="رقم الهاتف" data-en="Phone">رقم الهاتف</label><input type="tel" name="phone" required placeholder="01xxxxxxxxx"></div></div>
+<div class="fg"><label data-ar="نوع العملية" data-en="Operation Type">نوع العملية</label><input type="text" name="optype" required placeholder="استيراد / تصدير / ترانزيت..."></div>
+<div class="fg-row"><div class="fg"><label data-ar="نوع البضاعة" data-en="Goods Type">نوع البضاعة</label><input type="text" name="goods" required placeholder="وصف البضاعة"></div>
+<div class="fg"><label data-ar="الميناء / المنفذ" data-en="Port / Border">الميناء / المنفذ</label><input type="text" name="port" required placeholder="اسم الميناء أو المنفذ"></div></div>
+<div class="fg"><label data-ar="رقم البوليصة أو المرجع (إن وُجد)" data-en="BL / Reference No.">رقم البوليصة أو المرجع (إن وُجد)</label><input type="text" name="ref" placeholder="اختياري"></div>
+<div class="fg"><label data-ar="ملاحظات إضافية" data-en="Additional Notes">ملاحظات إضافية</label><textarea name="notes" rows="3" placeholder="مستندات متوفرة أو طلبات خاصة..."></textarea></div>
+<button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> <span data-ar="إرسال الطلب" data-en="Send Request">إرسال الطلب</span></button>
+</form></div></div>
+<div class="req-panel" id="tab4"><div class="req-form-box">
+<h3 data-ar="طلب تأجير معدات ثقيلة" data-en="Heavy Equipment Rental Request">طلب تأجير معدات ثقيلة</h3>
+<p class="sub" data-ar="حدد نوع المعدة ومدة الإيجار وموقع العمل" data-en="Specify equipment type, rental duration and site">حدد نوع المعدة ومدة الإيجار وموقع العمل</p>
+<form onsubmit="return sendForm(event,'Heavy Equipment Rental / تأجير معدات ثقيلة')">
+<div class="fg-row"><div class="fg"><label data-ar="اسم الشركة / العميل" data-en="Company / Client">اسم الشركة / العميل</label><input type="text" name="company" required placeholder="اسم الشركة"></div>
+<div class="fg"><label data-ar="رقم الهاتف" data-en="Phone">رقم الهاتف</label><input type="tel" name="phone" required placeholder="01xxxxxxxxx"></div></div>
+<div class="fg"><label data-ar="نوع المعدة المطلوبة" data-en="Required Equipment">نوع المعدة المطلوبة</label><input type="text" name="equip" required placeholder="ونش / رافعة / كلارك / أخرى..."></div>
+<div class="fg-row"><div class="fg"><label data-ar="موقع العمل" data-en="Work Site">موقع العمل</label><input type="text" name="site" required placeholder="الميناء / المصنع / المشروع"></div>
+<div class="fg"><label data-ar="مدة الإيجار التقريبية" data-en="Approx. Rental Duration">مدة الإيجار التقريبية</label><input type="text" name="duration" placeholder="يوم / أسبوع / شهر..."></div></div>
+<div class="fg"><label data-ar="هل تحتاج مشغل؟" data-en="Operator needed?">هل تحتاج مشغل؟</label><input type="text" name="operator" placeholder="نعم / لا"></div>
+<div class="fg"><label data-ar="ملاحظات إضافية" data-en="Additional Notes">ملاحظات إضافية</label><textarea name="notes" rows="3" placeholder="تفاصيل العمل أو اشتراطات..."></textarea></div>
+<button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> <span data-ar="إرسال الطلب" data-en="Send Request">إرسال الطلب</span></button>
+</form></div></div>
+<div class="req-panel" id="tab5"><div class="req-form-box">
+<h3 data-ar="طلب إدارة حاويات الميناء" data-en="Port Container Management Request">طلب إدارة حاويات الميناء</h3>
+<p class="sub" data-ar="بيانات الحاويات والحركة المطلوبة" data-en="Container details and required movement">بيانات الحاويات والحركة المطلوبة</p>
+<form onsubmit="return sendForm(event,'Port Container Management / إدارة حاويات')">
+<div class="fg-row"><div class="fg"><label data-ar="اسم الشركة / العميل" data-en="Company / Client">اسم الشركة / العميل</label><input type="text" name="company" required placeholder="اسم الشركة"></div>
+<div class="fg"><label data-ar="رقم الهاتف" data-en="Phone">رقم الهاتف</label><input type="tel" name="phone" required placeholder="01xxxxxxxxx"></div></div>
+<div class="fg-row"><div class="fg"><label data-ar="عدد الحاويات" data-en="Number of Containers">عدد الحاويات</label><input type="text" name="count" required placeholder="مثال: 10 حاويات"></div>
+<div class="fg"><label data-ar="حجم الحاوية" data-en="Container Size">حجم الحاوية</label><input type="text" name="size" placeholder="20 قدم / 40 قدم / ..."></div></div>
+<div class="fg-row"><div class="fg"><label data-ar="من" data-en="From">من</label><input type="text" name="from" required placeholder="الميناء أو الموقع"></div>
+<div class="fg"><label data-ar="إلى" data-en="To">إلى</label><input type="text" name="to" required placeholder="الوجهة"></div></div>
+<div class="fg"><label data-ar="ملاحظات إضافية" data-en="Additional Notes">ملاحظات إضافية</label><textarea name="notes" rows="3" placeholder="أرقام الحاويات أو أي تفاصيل..."></textarea></div>
+<button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> <span data-ar="إرسال الطلب" data-en="Send Request">إرسال الطلب</span></button>
+</form></div></div>
+<div class="req-panel" id="tab6"><div class="req-form-box">
+<h3 data-ar="طلب لوجستيات الصلب الصناعي" data-en="Industrial Steel Logistics Request">طلب لوجستيات الصلب الصناعي</h3>
+<p class="sub" data-ar="حدد نوع الحديد والكميات ومسار التوريد" data-en="Specify steel type, quantities and supply route">حدد نوع الحديد والكميات ومسار التوريد</p>
+<form onsubmit="return sendForm(event,'Industrial Steel Logistics / لوجستيات صلب')">
+<div class="fg-row"><div class="fg"><label data-ar="اسم الشركة / العميل" data-en="Company / Client">اسم الشركة / العميل</label><input type="text" name="company" required placeholder="اسم الشركة"></div>
+<div class="fg"><label data-ar="رقم الهاتف" data-en="Phone">رقم الهاتف</label><input type="tel" name="phone" required placeholder="01xxxxxxxxx"></div></div>
+<div class="fg"><label data-ar="نوع المنتج" data-en="Product Type">نوع المنتج</label><input type="text" name="product" required placeholder="حديد تسليح / لفائف صلب / قطاعات..."></div>
+<div class="fg-row"><div class="fg"><label data-ar="الكمية التقريبية" data-en="Approx. Quantity">الكمية التقريبية</label><input type="text" name="qty" required placeholder="بالطن"></div>
+<div class="fg"><label data-ar="مكان الاستلام" data-en="Pickup">مكان الاستلام</label><input type="text" name="pickup" required placeholder="الميناء أو المخزن"></div></div>
+<div class="fg"><label data-ar="مكان التسليم / المصنع" data-en="Delivery / Plant">مكان التسليم / المصنع</label><input type="text" name="dest" required placeholder="اسم المصنع أو الموقع"></div>
+<div class="fg"><label data-ar="ملاحظات إضافية" data-en="Additional Notes">ملاحظات إضافية</label><textarea name="notes" rows="3" placeholder="مواعيد أو اشتراطات سلامة..."></textarea></div>
+<button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> <span data-ar="إرسال الطلب" data-en="Send Request">إرسال الطلب</span></button>
+</form></div></div>
+<div class="contact-grid reveal" id="contact">
+<div class="contact-item"><i class="fas fa-envelope"></i><div><strong data-ar="البريد الإلكتروني" data-en="Email">البريد الإلكتروني</strong><a href="mailto:figi.shipping.and.logistics@gmail.com">figi.shipping.and.logistics@gmail.com</a></div></div>
+<div class="contact-item"><i class="fas fa-phone-alt"></i><div><strong data-ar="الهواتف" data-en="Phones">الهواتف</strong><a href="tel:01019411905">01019411905</a> · <a href="tel:01013134539">01013134539</a></div></div>
+<div class="contact-item"><i class="fas fa-headset"></i><div><strong data-ar="الخط الساخن" data-en="Hotline">الخط الساخن</strong><a href="tel:034427940">03 4427940</a></div></div>
+<div class="contact-item"><i class="fas fa-map-marker-alt"></i><div><strong data-ar="العنوان" data-en="Address">العنوان</strong><span data-ar="الإسكندرية، مصر — 5V99+CXX" data-en="Alexandria, Egypt — 5V99+CXX">الإسكندرية، مصر — 5V99+CXX</span></div></div>
+<div class="contact-item"><i class="fas fa-user-tie"></i><div><strong data-ar="الإدارة" data-en="Management">الإدارة</strong><span data-ar="أ/ إبراهيم قبيصي — مدير الشركة" data-en="Mr. Ibrahim Qubaisi — Managing Director">أ/ إبراهيم قبيصي — مدير الشركة</span><br><span data-ar="أ/ أحمد قبيصي — نائب المدير" data-en="Mr. Ahmed Qubaisi — Deputy Director">أ/ أحمد قبيصي — نائب المدير</span></div></div>
+</div></div></section>
+<footer><div class="container">
+<div class="ft-grid">
+<div class="ft-brand"><a href="#home" class="logo"><img src="assets/logo.png" alt="FEGY" class="logo-img" style="width:42px;height:42px"/><div>FEGY <span data-ar="للملاحة واللوجستيات" data-en="Logistics & Marine">للملاحة واللوجستيات</span></div></a>
+<p data-ar="حلول متكاملة للشحن والتفريغ والنقل والتخليص الجمركي في مصر." data-en="Integrated stevedoring, transport and customs solutions in Egypt.">حلول متكاملة للشحن والتفريغ والنقل والتخليص الجمركي في مصر.</p>
+<div class="ft-social"><a href="tel:01019411905"><i class="fas fa-phone"></i></a><a href="https://wa.me/201019411905" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a><a href="mailto:figi.shipping.and.logistics@gmail.com"><i class="fas fa-envelope"></i></a></div></div>
+<div class="ft-col"><h4 data-ar="روابط" data-en="Links">روابط</h4><ul><li><a href="#home" data-ar="الرئيسية" data-en="Home">الرئيسية</a></li><li><a href="#services" data-ar="خدماتنا" data-en="Services">خدماتنا</a></li><li><a href="#gallery" data-ar="أعمالنا" data-en="Operations">أعمالنا</a></li><li><a href="#request" data-ar="طلب خدمة" data-en="Request">طلب خدمة</a></li></ul></div>
+<div class="ft-col"><h4 data-ar="خدمات" data-en="Services">خدمات</h4><ul><li><a href="#services" data-ar="شحن وتفريغ" data-en="Stevedoring">شحن وتفريغ</a></li><li><a href="#services" data-ar="نقل بري" data-en="Road Transport">نقل بري</a></li><li><a href="#services" data-ar="تخليص جمركي" data-en="Customs">تخليص جمركي</a></li><li><a href="#services" data-ar="معدات ثقيلة" data-en="Heavy Equipment">معدات ثقيلة</a></li></ul></div>
+<div class="ft-col"><h4 data-ar="تواصل" data-en="Contact">تواصل</h4><ul><li><a href="tel:01019411905">01019411905</a></li><li><a href="tel:01013134539">01013134539</a></li><li><a href="tel:034427940">03 4427940</a></li><li><a href="mailto:figi.shipping.and.logistics@gmail.com">Email</a></li></ul></div>
+</div>
+<div class="ft-bottom"><p>© 2026 FEGY Logistics — شركة فيجى للملاحة والخدمات اللوجستية</p><p data-ar="الإسكندرية — مصر" data-en="Alexandria — Egypt">الإسكندرية — مصر</p></div>
+</div></footer>
+<a class="wa-float" href="https://wa.me/201019411905" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
+<div class="modal-overlay" id="modal"><div class="modal">
+<button class="modal-close" onclick="closeModal()"><i class="fas fa-times"></i></button>
+<h3 id="modalTitle"></h3><p id="modalDesc"></p><ul id="modalList"></ul>
+<a href="#request" class="btn btn-primary" onclick="closeModal();document.querySelector('[data-tab=\''+currentTab+'\']').click()" style="width:100%;justify-content:center"><i class="fas fa-paper-plane"></i> <span data-ar="اطلب هذه الخدمة" data-en="Request this service">اطلب هذه الخدمة</span></a>
+</div></div>
+<div class="lb" id="lb" onclick="closeLb()"><button class="lb-x" onclick="closeLb()"><i class="fas fa-times"></i></button><img id="lbImg" src="" alt="" onclick="event.stopPropagation()"/></div>
+<script>
+const services={m1:{ar:{t:'الشحن والتفريغ البحري',d:'عمليات ميدانية لتفريغ وشحن السفن وإدارة الحاويات مباشرة من أرصفة الموانئ المصرية.',l:['تفريغ وشحن السفن','إدارة الحاويات على الرصيف','تنسيق مع سلطات الميناء','أعلى معايير السلامة']},en:{t:'Marine Stevedoring',d:'Field operations for vessel loading/unloading and container handling from Egyptian port quays.',l:['Vessel loading & discharge','Quay-side container control','Port authority coordination','Strict safety standards']}},m2:{ar:{t:'النقل البري بالأسطول',d:'أسطول تريلات مجهز لنقل الحديد والحاويات والبضائع بين جميع الموانئ والمحافظات.',l:['تريلات حديثة ومجهزة','نقل حديد ولفائف وحاويات','تغطية كل المحافظات','تتبع والتزام بالمواعيد']},en:{t:'Road Fleet Transport',d:'Equipped trailer fleet for steel, containers and cargo between ports and governorates.',l:['Modern equipped trailers','Steel coils, rebar & containers','Nationwide coverage','Tracking and on-time delivery']}},m3:{ar:{t:'التخليص الجمركي',d:'خبرة احترافية في إنهاء الإجراءات الجمركية وربط السفن لضمان سرعة الإفراج.',l:['تخليص استيراد وتصدير','إعداد المستندات','التنسيق مع الجمارك','تقليل زمن الإفراج']},en:{t:'Customs Clearance',d:'Professional handling of customs procedures for fast release.',l:['Import & export clearance','Document preparation','Customs coordination','Reduced release time']}},m4:{ar:{t:'تأجير المعدات الثقيلة',d:'توفير وتشغيل رافعات وونشات ومعدات ثقيلة لعمليات الشحن والمشاريع الصناعية.',l:['ونشات ورافعات ثقيلة','كلاركات رفع عالي','تشغيل بمشغلين محترفين','دعم مشاريع المصانع']},en:{t:'Heavy Equipment Rental',d:'Cranes, forklifts and heavy gear for cargo handling and industrial projects.',l:['Heavy cranes & lifts','High-capacity forklifts','Professional operators','Plant project support']}},m5:{ar:{t:'إدارة حاويات الميناء',d:'تنسيق كامل لحركة الحاويات من وإلى الموانئ مع ضمان السلامة والسرعة.',l:['حجز وتنسيق الحاويات','نقل من الرصيف','متابعة الحالة','تقارير للعميل']},en:{t:'Port Container Management',d:'End-to-end container movement with safety and speed.',l:['Booking & coordination','Quay transfer','Status tracking','Client reporting']}},m6:{ar:{t:'لوجستيات الصلب الصناعي',d:'تخصص في نقل وتوريد حديد التسليح والقطاعات واللفائف للمصانع والمشاريع الصناعية.',l:['حديد تسليح وقطاعات','لفائف صلب (Coils)','توريد مباشر للمصانع','معايير أمان صناعية']},en:{t:'Industrial Steel Logistics',d:'Specialized rebar, sections and coil supply to industrial plants.',l:['Rebar & structural sections','Steel coils','Direct plant supply','Industrial safety standards']}}};
+let lang='ar',currentTab='tab1';const root=document.getElementById('htmlRoot');
+function applyLang(){document.querySelectorAll('[data-ar]').forEach(el=>{const v=el.getAttribute('data-'+lang);if(v==null)return;if(el.tagName==='INPUT'||el.tagName==='TEXTAREA'){el.placeholder=v;return}if(el.tagName==='OPTION'&&!el.value){el.textContent=v;return}el.innerHTML=v});root.lang=lang;root.dir=lang==='ar'?'rtl':'ltr';document.getElementById('langBtn').textContent=lang==='ar'?'EN':'عربي'}
+document.getElementById('langBtn').addEventListener('click',()=>{lang=lang==='ar'?'en':'ar';applyLang()});
+document.getElementById('menuBtn').addEventListener('click',()=>{document.getElementById('navLinks').classList.toggle('open')});
+document.querySelectorAll('#navLinks a').forEach(a=>a.addEventListener('click',()=>{document.getElementById('navLinks').classList.remove('open')}));
+window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('scrolled',scrollY>40)});
+document.querySelectorAll('.svc-card').forEach(card=>{card.addEventListener('click',()=>{const id=card.getAttribute('data-modal');currentTab=card.getAttribute('data-tab');const s=services[id][lang];document.getElementById('modalTitle').textContent=s.t;document.getElementById('modalDesc').textContent=s.d;document.getElementById('modalList').innerHTML=s.l.map(x=>'<li><i class="fas fa-check-circle"></i> '+x+'</li>').join('');document.getElementById('modal').classList.add('active');document.body.style.overflow='hidden'})});
+function closeModal(){document.getElementById('modal').classList.remove('active');document.body.style.overflow=''}
+document.getElementById('modal').addEventListener('click',e=>{if(e.target.id==='modal')closeModal()});
+document.querySelectorAll('.req-tab').forEach(tab=>{tab.addEventListener('click',()=>{document.querySelectorAll('.req-tab').forEach(t=>t.classList.remove('active'));document.querySelectorAll('.req-panel').forEach(p=>p.classList.remove('active'));tab.classList.add('active');document.getElementById(tab.getAttribute('data-tab')).classList.add('active');currentTab=tab.getAttribute('data-tab')})});
+function openLb(src){document.getElementById('lbImg').src=src;document.getElementById('lb').classList.add('active');document.body.style.overflow='hidden'}
+function closeLb(){document.getElementById('lb').classList.remove('active');document.body.style.overflow=''}
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeModal();closeLb()}});
+function sendForm(e,serviceName){e.preventDefault();const form=e.target;const data=new FormData(form);let body='Service / الخدمة: '+serviceName+'\\n================================\\n';data.forEach((v,k)=>{if(v.trim())body+=k+': '+v+'\\n'});body+='================================\\nSent from FEGY Logistics website';const subject=encodeURIComponent('FEGY Request — '+serviceName);window.location.href='mailto:figi.shipping.and.logistics@gmail.com?subject='+subject+'&body='+encodeURIComponent(body);return false}
+const obs=new IntersectionObserver(entries=>{entries.forEach(en=>{if(en.isIntersecting)en.target.classList.add('on')})},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+// Preloader
+window.addEventListener('load',()=>{
+  setTimeout(()=>{
+    const p=document.getElementById('preloader');
+    if(p)p.classList.add('hide');
+    document.body.classList.add('page-enter');
+  },900);
+});
+
+</script>
+</body>
+</html>
